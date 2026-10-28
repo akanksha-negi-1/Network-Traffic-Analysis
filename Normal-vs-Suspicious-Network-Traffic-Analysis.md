@@ -4,7 +4,7 @@
 
 This document compares the seven traffic scenarios captured in the project and highlights how normal network traffic can be differentiated from suspicious traffic using packet-level characteristics in Wireshark.
 
-The distinction is based on the traffic patterns observed in the captures, including communication purpose, packet behavior, destination patterns, repetition, and connection behavior.
+The distinction is based on the traffic characteristics observed in the captures, including repetition, destination pattern, and response behavior.
 
 ## 1. Normal vs Suspicious Traffic
 
@@ -16,7 +16,7 @@ These patterns do not automatically prove malicious activity. However, they are 
 
 ## 2. Comparison of All Seven Traffic Scenarios
 
-| Experiment | Traffic Type | Main Pattern | Destination Behavior | Response Pattern | Key Indicator |
+| Experiment | Traffic Type | Main Pattern | Destination pattern | Response behavior | Key Indicator |
 |---|---|---|---|---|---|
 | DNS | Normal | Domain name resolution | DNS server, port 53 | Query → response | Expected request/response activity |
 | ICMP | Normal | Ping communication | One destination | Echo Request → Echo Reply | Normal two-way ICMP communication |
@@ -169,22 +169,7 @@ A high volume of repeated ICMP requests toward one target can be an indicator of
 
 ## 4. Main Differences Between Normal and Suspicious Traffic
 
-### A. Communication Purpose
-
-**Normal traffic:**
-- DNS resolves a domain.
-- ICMP tests connectivity.
-- HTTP retrieves resources.
-- HTTPS provides encrypted application communication.
-
-**Suspicious traffic:**
-- Repeated failed TCP connections repeatedly target a service.
-- Port scanning probes multiple ports.
-- ICMP burst generates repeated requests toward one target.
-
-The purpose may not always be obvious from packets alone, so the observed traffic pattern is important.
-
-### B. Repetition
+### A. Repetition
 
 Normal traffic can contain repeated packets, but the repetition usually supports a recognizable communication process.
 
@@ -194,7 +179,7 @@ Suspicious traffic can show unusually repetitive behavior, such as:
 - Repeated probes to different ports
 - Repeated ICMP Echo Requests
 
-### C. Destination Pattern
+### B. Destination Pattern
 
 This is especially useful for distinguishing the suspicious experiments:
 
@@ -202,7 +187,7 @@ This is especially useful for distinguishing the suspicious experiments:
 - **Port Scanning:** same target but many destination ports.
 - **ICMP Burst:** same target with repeated ICMP requests.
 
-### D. Response Behavior
+### C. Response Behavior
 
 Normal traffic in this project commonly showed expected responses:
 
@@ -259,7 +244,7 @@ This project demonstrates a basic network-traffic analysis workflow in which nor
 The comparison shows three particularly useful characteristics for distinguishing suspicious traffic:
 
 - **Repetition** — unusually repeated requests or connection attempts
-- **Targeting behavior** — repeated targeting of one service or probing of many ports
+- **Destination pattern** — repeated targeting of one service or probing of many ports
 - **Response behavior** — missing or unsuccessful responses where successful communication would normally be expected
 
 These characteristics can help a security analyst identify traffic that requires further investigation before determining whether an event is actually malicious.
