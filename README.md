@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project demonstrates a practical network traffic analysis workflow using Wireshark. It captures and analyzes normal and suspicious network activity at the packet level, focusing on communication purpose, packet behavior, destination patterns, repetition, and response behavior.
+This project demonstrates a practical network traffic analysis workflow using Wireshark. It captures and analyzes normal and suspicious network activity at the packet level, focusing on observable packet behavior, repetition, destination pattern, and response behavior.
 
 The project contains seven controlled traffic scenarios:
 
@@ -96,9 +96,9 @@ Examples observed in the project include:
 - Repeated SYN probes across different ports
 - Repeated ICMP Echo Requests
 
-### Destination Behavior
+### Destination Pattern
 
-Destination behavior helped distinguish the suspicious scenarios:
+Destination pattern helped distinguish the suspicious scenarios:
 
 - **Repeated Failed TCP Connections:** same target and same destination port.
 - **Port Scanning:** same target with multiple destination ports.
@@ -122,7 +122,7 @@ The seven experiments demonstrate a basic network-traffic analysis workflow in w
 1. Normal protocol behavior is identified.
 2. Unusual traffic patterns are isolated.
 3. Packet-level evidence is examined.
-4. Repetition, targeting behavior, and response behavior are compared.
+4. Repetition, destination pattern, and response behavior are compared.
 5. Suspicious patterns are documented.
 
 A key takeaway is that the same protocol can represent normal or suspicious activity depending on how it is used, how frequently it is sent, where it is directed, and whether the expected communication pattern occurs.
