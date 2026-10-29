@@ -4,7 +4,7 @@
 
 This project demonstrates a practical network traffic analysis workflow using Wireshark. It captures and analyzes normal and suspicious network activity at the packet level, focusing on observable packet behavior, repetition, destination pattern, and response behavior.
 
-The project contains seven controlled traffic scenarios:
+The project contains 7 controlled traffic scenarios:
 
 - 4 normal traffic scenarios
 - 3 suspicious traffic scenarios
@@ -17,7 +17,7 @@ The project contains seven controlled traffic scenarios:
 - Compare normal and suspicious traffic based on observable packet patterns.
 - Document packet-level evidence and findings.
 
-## Tools
+## Tools & Technologies
 
 - Wireshark
 
@@ -49,7 +49,7 @@ Each experiment followed a controlled capture-and-analysis workflow:
 3. Apply an appropriate display filter.
 4. Identify relevant packets and packet-level behavior.
 5. Save the packet capture as a `.pcapng` file.
-6. Document the observations and findings in a Markdown analysis file.
+6. Document the observations and findings.
 
 The suspicious scenarios were generated in a controlled environment for analysis purposes.
 
