@@ -20,9 +20,6 @@ The project contains seven controlled traffic scenarios:
 ## Tools
 
 - Wireshark
-- Windows PowerShell
-- Python HTTP server
-- Local network devices used to generate controlled traffic
 
 ## Traffic Scenarios
 
